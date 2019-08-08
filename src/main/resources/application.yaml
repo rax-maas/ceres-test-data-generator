@@ -1,0 +1,12 @@
+server:
+  port: 8082
+
+number.of.times.to.send.data: 1
+
+#logging.level.root=debug
+topic: unified.metrics.json
+logging:
+  level:
+    com.rackspacecloud: debug
+    org.springframework:
+      kafka.listener: DEBUG
