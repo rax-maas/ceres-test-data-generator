@@ -29,6 +29,7 @@ public class ProducerConfiguration {
         properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, servers);
         properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, AvroSerializer.class);
+//        properties.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
 
         return properties;
     }
@@ -47,4 +48,9 @@ public class ProducerConfiguration {
     public Sender sender(){
         return new Sender();
     }
+
+//    @Bean
+//    public MaasDataGenerator maasDataGenerator() {
+//        return new MaasDataGenerator(10, "CORE");
+//    }
 }
