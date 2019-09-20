@@ -1,7 +1,5 @@
 package com.rackspacecloud.metrics.testdatagenerator.generators.measurements;
 
-import javafx.util.Pair;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,9 +24,9 @@ public class Cpu extends Measurement {
 
     private void addFields() {
         super.addFields(
-                new Pair<>("percentage_user_usage", ""),
-                new Pair<>("percentage_system_usage", ""),
-                new Pair("percentage_idle", "")
+                Map.entry("percentage_user_usage", ""),
+                Map.entry("percentage_system_usage", ""),
+                Map.entry("percentage_idle", "")
         );
     }
 }

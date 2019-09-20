@@ -1,5 +1,6 @@
 package com.rackspacecloud.metrics.testdatagenerator.serializers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.io.DatumWriter;
@@ -10,9 +11,6 @@ import org.apache.avro.specific.SpecificRecordBase;
 import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.Serializer;
 
-import lombok.extern.slf4j.Slf4j;
-
-import javax.xml.bind.DatatypeConverter;
 import java.io.ByteArrayOutputStream;
 import java.util.Map;
 
@@ -40,7 +38,6 @@ public class AvroSerializer<T extends SpecificRecordBase> implements Serializer<
             outputStream.close();
 
             byte[] result = outputStream.toByteArray();
-            log.debug("serialized data='{}'", DatatypeConverter.printHexBinary(result));
 
             return result;
         }

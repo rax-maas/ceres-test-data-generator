@@ -1,7 +1,5 @@
 package com.rackspacecloud.metrics.testdatagenerator.generators.measurements;
 
-import javafx.util.Pair;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,12 +24,12 @@ public class AgentFileSystem extends Measurement {
 
     private void addFields() {
         super.addFields(
-                new Pair<>("filesystem.total", "KILOBYTES"),
-                new Pair<>("filesystem.free", "KILOBYTES"),
-                new Pair("filesystem.free_files", "free_files"),
-                new Pair<>("filesystem.avail", "KILOBYTES"),
-                new Pair<>("filesystem.files", "files"),
-                new Pair<>("filesystem.used", "KILOBYTES")
+                Map.entry("filesystem.total", "KILOBYTES"),
+                Map.entry("filesystem.free", "KILOBYTES"),
+                Map.entry("filesystem.free_files", "free_files"),
+                Map.entry("filesystem.avail", "KILOBYTES"),
+                Map.entry("filesystem.files", "files"),
+                Map.entry("filesystem.used", "KILOBYTES")
         );
     }
 }

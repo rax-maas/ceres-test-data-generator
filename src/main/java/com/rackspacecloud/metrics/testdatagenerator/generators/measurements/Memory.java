@@ -1,7 +1,5 @@
 package com.rackspacecloud.metrics.testdatagenerator.generators.measurements;
 
-import javafx.util.Pair;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,9 +24,9 @@ public class Memory extends Measurement {
 
     private void addFields() {
         super.addFields(
-                new Pair<>("used", "bytes"),
-                new Pair<>("available", "bytes"),
-                new Pair("total", "bytes")
+                Map.entry("used", "bytes"),
+                Map.entry("available", "bytes"),
+                Map.entry("total", "bytes")
         );
     }
 }

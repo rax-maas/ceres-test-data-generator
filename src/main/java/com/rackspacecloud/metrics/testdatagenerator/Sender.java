@@ -32,6 +32,8 @@ public class Sender {
     DataGenerator uimDataGenerator;
 
     public Sender() {
+        // Create and initialize the data structure for metrics to be produced.
+        // Tags and fields are created in these calls, but their values are not populated.
         coreMaasDataGenerator = new DataGenerator(5, "CORE", MonitoringSystem.MAAS);
         encoreMaasDataGenerator = new DataGenerator(10, "ENCORE", MonitoringSystem.MAAS);
         uimDataGenerator = new DataGenerator(15, "RCN", MonitoringSystem.UIM);
@@ -43,7 +45,7 @@ public class Sender {
         LOGGER.info("FINISH: Processing");
     }
 
-    @Scheduled(cron = "*/1 * * * * *") // Run every 5 seconds
+    @Scheduled(cron = "*/5 * * * * *") // Run every 5 seconds
     public void sendBatchesOfMessages() {
 
         if(numberOfTimesAlreadySentData >= numberOfTimesToSendData) return;
