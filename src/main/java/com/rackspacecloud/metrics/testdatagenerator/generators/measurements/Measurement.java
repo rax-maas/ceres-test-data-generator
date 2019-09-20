@@ -1,6 +1,5 @@
 package com.rackspacecloud.metrics.testdatagenerator.generators.measurements;
 
-import javafx.util.Pair;
 import lombok.Data;
 
 import java.util.*;
@@ -13,7 +12,7 @@ public class Measurement {
     protected String collectionTarget;
     protected Map<String, String> collectionMetadata;
     // Each field is a pair of field name and it's unit
-    protected List<Pair<String, String>> fields;
+    protected List<Map.Entry<String, String>> fields;
 
     protected Measurement(final String collectionName, final String collectionLabel, final String collectionTarget) {
         this.collectionLabel = collectionLabel;
@@ -28,7 +27,7 @@ public class Measurement {
         collectionMetadata.putAll(metadata);
     }
 
-    protected void addFields(Pair<String, String>... fieldsCollection) {
+    protected void addFields(Map.Entry<String, String>... fieldsCollection) {
         fields.addAll(Arrays.asList(fieldsCollection));
     }
 
